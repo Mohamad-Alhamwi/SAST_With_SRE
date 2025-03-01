@@ -1,4 +1,4 @@
-# Bug-2010 (Libslirp)
+# BUG-2010 (Libslirp)
 
 ## Installing The Vulnerable Version
 
@@ -43,7 +43,7 @@ git log --graph --oneline --all | grep -B 5 -A 5 "a6ecd0f"
 > \* ce220b6 slirp: Read host DNS config on demand
 
 
-Now, we should see the commit `a6ecd0f` for **Bug-2010**.
+Now, we should see the commit `a6ecd0f` for **BUG-2010**.
 
 4. We `checkout` the commit before the patch to retrieve the vulnerable version. Note that we `checkout` the `6842ff5` commit, not the `1e784fd` commit, because the git graph is read vertically from bottom to top:
 
@@ -51,4 +51,4 @@ Now, we should see the commit `a6ecd0f` for **Bug-2010**.
 git checkout 6842ff5
 ```
 
-Eventually, we have the vulnerable version of **Libslirp** before the fix for **Bug-2010** was applied. Now, we are ready to dive in.
+Eventually, we have the vulnerable version of **Libslirp** before the fix for **BUG-2010** was applied. Now, we are ready to dive in.
