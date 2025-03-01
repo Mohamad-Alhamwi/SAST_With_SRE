@@ -10,7 +10,7 @@ A use-after-free vulnerability caused by using `m->slirp->mbuf_alloced--;` after
 | Vulnerability Details | - |
 | Project Repository | https://gitlab.freedesktop.org/slirp/libslirp |
 | Introduced in | - |
-| File | `src/mbuf.c` |
+| File | `mbuf.c` |
 | Line | 96 |
 | Fixed at | https://gitlab.freedesktop.org/slirp/libslirp/-/commit/a6ecd0ff |
 
@@ -70,7 +70,7 @@ A heap-based buffer overflow vulnerability caused by an off-by-one error.
 | Vulnerability Details | https://nvd.nist.gov/vuln/detail/CVE-2018-11360 |
 | Project Repository | https://gitlab.com/wireshark/wireshark |
 | Introduced in | - |
-| File |  `epan/dissectors/packet-gsm_a_dtap.c ` |
+| File |  `epan/dissectors/packet-gsm_a_dtap.c` |
 | Line | 2324 |
 | Fixed at | https://gitlab.com/wireshark/wireshark/-/commit/a55b36c51f83a7b9680824e8ee3a6ce8429ab24b |
 
@@ -108,7 +108,7 @@ A stack-based buffer overflow vulnerability caused by an unchecked `strcpy()` in
 | Project Repository | https://github.com/CESNET/libyang |
 | Introduced in | - |
 | File |  `src/parser.c` |
-| Line | 1028 |
+| Line | 1026 |
 | Fixed at | https://github.com/CESNET/libyang/commit/6980afae2ff9fcd6d67508b0a3f694d75fd059d6 |
 
 ### CVE-2019-1010315 (WavPack)
@@ -120,7 +120,7 @@ A divide-by-zero vulnerability caused by a missing checking mechanism.
 | Project Repository | https://github.com/dbry/WavPack |
 | Introduced in | - |
 | File |  `cli/dsdiff.c` |
-| Line | 288 |
+| Line | 282 |
 | Fixed at | https://github.com/dbry/WavPack/commit/4c0faba32fddbd0745cbfaf1e1aeb3da5d35b9fc |
 
 ## More information
