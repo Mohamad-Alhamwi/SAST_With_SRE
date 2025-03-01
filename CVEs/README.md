@@ -1,6 +1,4 @@
-# SAST With SRE
-
-## CVEs List
+# CVEs List
 
 ### BUG-2010 (Libslirp)
 A use-after-free vulnerability caused by using `m->slirp->mbuf_alloced--;` after calling `g_free(m);`.
