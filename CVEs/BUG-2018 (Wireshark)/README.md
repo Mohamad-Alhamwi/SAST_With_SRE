@@ -59,3 +59,4 @@ In the  `epan/ftypes/ftype-string.c` file, the function `val_from_unparsed` call
 The same issue occurs in the `epan/ftypes/ftype-protocol.c` file, with the only difference being that the function name is `value_free` instead of `string_fvalue_free`.
 
 ## Installing The Vulnerable Version
+Since this vulnerability existed at the same point where the vulnerability **CVE-2018-11360** was present, there is no need to reinstall the Wireshark project files. Please refer to the project files at /CVEs/CVE-2018-11360 (Wireshark)/Wireshark/.
