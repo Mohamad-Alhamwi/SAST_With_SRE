@@ -1,5 +1,30 @@
 # BUG-2010 (Libslirp)
 
+## Root Cause Analysis
+
+A use-after-free vulnerability exists in the file `mbuf.c`. This vulnerability occures due to the use of a previously freed memory area.
+
+The function in which this vulneraiblity exists is as follows:
+
+```C
+void m_free(struct mbuf *m)
+{
+ 	/**
+	 * Reduced for space reasons.
+	 **/
+        if (m->m_flags & M_DOFREE) {
+            free(m);
+            m->slirp->mbuf_alloced--;
+        }
+    /**
+	 * Reduced for space reasons.
+	 **/
+}
+```
+
+As we can see, at the line 96 in the `mbuf.c` file,  `free(m);` is called to free the allocated memory area pointed to by `m`. Immediately after that, the property `mbuf_alloced` is accessed and manibuated by being decremented.
+This vulnerability can be fixed by moving the `free(m);`  line **after** the `m->slirp->mbuf_alloced--;` line.
+
 ## Installing The Vulnerable Version
 
 1. We clone the repository:
