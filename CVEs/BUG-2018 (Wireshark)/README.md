@@ -48,8 +48,6 @@ static gboolean val_from_unparsed(fvalue_t *fv, const char *s, gboolean allow_pa
 }
 ```
 
-1. The function `val_from_unparsed` calls `string_fvalue_free`, which is a wrapper for the `g_free` function that ensures freeing the memory pointed to by the provided parameter.
-2. However, `val_from_unparsed` also returns the result of  `val_from_string`. The function `val_from_string`, in turn, also calls `string_fvalue_free` (the same memory deallocation function).
-3. As a result, the same memory area is freed twice—once by `val_from_unparsed` and again by `val_from_string`, leading to to a double-free vulnerability.
+The function `val_from_unparsed` calls `string_fvalue_free`, which is a wrapper for the `g_free` function that ensures that the memory pointed to by the provided parameter is freed. However, `val_from_unparsed` also returns the result of  `val_from_string`. The function `val_from_string`, in turn, also calls `string_fvalue_free` (the same memory deallocation function). As a result, the same memory area is freed twice by `val_from_unparsed` and again by `val_from_string`, leading to to a double-free vulnerability.
 
 ## Installing The Vulnerable Version
