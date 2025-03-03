@@ -2,7 +2,7 @@
 
 ## Root Cause Analysis
 
-Two double-free vulnerabilities exist in the files `epan/ftypes/ftype-string.c` and `epan/ftypes/ftype-protocol.c`. This vulnerability occurs due to improper handling of memory deallocation, which can result in double-free errors.
+Two double-free vulnerabilities exist in the files `epan/ftypes/ftype-string.c` and `epan/ftypes/ftype-protocol.c`. This type of vulnerability occurs due to improper handling of memory deallocation, which can result in double-free errors.
 
 The double-free vulnerabilities are caused by the interaction of three functions:
 
