@@ -2,7 +2,7 @@
 
 ## Root Cause Analysis
 
-A use-after-free vulnerability exists in the file `mbuf.c`. This vulnerability occures due to the use of a previously freed memory area.
+A use-after-free vulnerability exists in the file `mbuf.c`. This type of vulnerability occurs due to the use of a previously freed memory area.
 
 The function in which this vulneraiblity exists is as follows:
 
